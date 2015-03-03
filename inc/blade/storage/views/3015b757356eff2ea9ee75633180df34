@@ -1,0 +1,7 @@
+<?php // /Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/cutlass-wp-theme/template-database.php ?>
+<?php //  Template Name: 数据库 ?>
+<?php \Laravel\Section::start('page-content'); ?>
+
+  <?php echo view('templates.content.database')->with(get_defined_vars())->render(); ?>
+<?php \Laravel\Section::stop(); ?>
+<?php echo view('templates.layouts.normal')->with(get_defined_vars())->render(); ?>

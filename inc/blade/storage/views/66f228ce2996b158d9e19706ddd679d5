@@ -1,0 +1,7 @@
+<?php // /Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/cutlass-wp-theme/home.php ?>
+
+<?php \Laravel\Section::start('page-content'); ?>
+  <?php echo view('templates.content.index')->with(get_defined_vars())->render(); ?>
+  home
+<?php \Laravel\Section::stop(); ?>
+<?php echo view('templates.layouts.normal')->with(get_defined_vars())->render(); ?>

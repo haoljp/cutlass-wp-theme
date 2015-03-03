@@ -1,0 +1,22 @@
+<article <?php echo  post_class() ; ?>>
+
+  <?php if(get_post_format() == 'gallery'): ?>
+    <?php echo  the_content() ; ?>
+  <?php else: ?> 
+    <div class="excerpt-item clearfix">
+      <div class="excerpt-img pull-left">
+      <img src="<?php echo  cutlass_first_image() ; ?>" alt="<?php echo  the_title() ; ?>"/>
+      <?php echo  the_post_thumbnail() ; ?>
+      </div>
+      <div class="excerpt-info pull-left">
+        <h2 class="entry-title"><a href="<?php echo  the_permalink() ; ?>" title="<?php echo  the_title() ; ?>"><?php echo  the_title() ; ?></a></h2>
+        <p class="entry-summary">
+          <?php echo  the_excerpt() ; ?>
+          <span><?php echo  get_post_format() ; ?></span>
+        </p>
+      </div>
+    </div>
+  <?php endif; ?>
+  <?php echo view('templates.includes.entry-meta')->with(get_defined_vars())->render(); ?>
+
+</article>
