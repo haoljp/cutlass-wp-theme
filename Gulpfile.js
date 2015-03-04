@@ -12,6 +12,7 @@ var gulp =            require('gulp'),
     pngcrush =        require('imagemin-pngcrush'),
     mainBowerFiles =  require('main-bower-files'),
     filter =          require('gulp-filter'),
+    connect =         require('gulp-connect'),
     clean =           require('gulp-clean');
 
 // == Clean Tasks == //
@@ -132,19 +133,33 @@ gulp.task('watch', function() {
   gulp.watch('src/sass/**/*.scss', ['styles-dev']);
   gulp.watch('src/js/**/*.js', ['scripts-dev']);
   gulp.watch('src/img/**', ['imagemin']);
+  gulp.watch('html/*.html', ['html']);
 
   livereload.listen();
   gulp.watch('**/*.php').on('change', livereload.changed);
+  gulp.watch('html/*.html').on('change', livereload.changed);
   gulp.watch('dist/css/*.css').on('change', livereload.changed);
   gulp.watch('dist/js/*.js').on('change', livereload.changed);
   gulp.watch('dist/img/**').on('change', livereload.changed);
+});
+
+gulp.task('connect', function() {
+  connect.server({
+    root: '',
+    livereload: true
+  });
+});
+
+gulp.task('html', function() {
+  gulp.src('./html/*.html')
+    .pipe(connect.reload());
 });
 
 
 // == GULP TASKS == //
 
 // = Clean Task = //
-gulp.task('clean', ['clean-styles', 'clean-scripts']);
+gulp.task('clean', ['clean-styles', 'clean-scripts', 'clean-tmp']);
 // = Development Task = //
 gulp.task('dev', ['clean', 'vendor-dev', 'styles-dev', 'scripts-dev']);
 // = Build Task = //
@@ -154,3 +169,5 @@ gulp.task('image', ['imagemin']);
 gulp.task('image-clear', ['clean-images', 'imagemin']);
 // = Default Task = //
 gulp.task('default', ['dev', 'watch']);
+
+gulp.task('server', ['connect', 'dev', 'watch']);
