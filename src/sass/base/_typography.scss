@@ -1,24 +1,12 @@
 //Typography specific styles
 
-body {
-}
-
-body,
-button,
-input,
-select,
-textarea {
-	@include font-size(1.6);
-}
-
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
 }
 
-p {
-	margin-bottom: 1.5em;
+a {
+	color: $linkColor;
 }
-
 b, strong {
 	font-weight: bold;
 }

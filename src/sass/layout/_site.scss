@@ -1,11 +1,43 @@
-.main {
-	width:100%;
+.container {
+  @include wrapper();
 }
-.main.sidebar {
-	width:70%;
-	float:left;
+.header {
+  position: relative;
+  background: $headerColor;
+  
+  &-c1 {
+    height: 80px;
+  }
+  .logo,
+  .nav-wrap{
+    float: left;
+  }
+
+  .logo {
+    width: 100px;
+    margin-right: 48px;
+  }
 }
-.sidebar {
-	width:25%;
-	float:right;
+
+.content {
+  @include wrapper();
+  
+  .main {
+    width: 672px;
+    float: left;
+  }
+  .aside {
+    width:300px;
+    float:right;
+  }
 }
+
+.box {
+  &-hd {
+
+  }
+  &-bd {
+
+  }
+}
+

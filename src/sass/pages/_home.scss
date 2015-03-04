@@ -1,4 +1,16 @@
 //Home page specific stylings
+.slider {
+  padding: 40px 0;
+  background: url($imgPath + '/slide.jpg') no-repeat 0 0;
+  &-wrap {
+    width: 672px;
+    float: left;
+  }
+  .download-wrap {
+    width: 328px;
+    float: left;
+  }
+}
 .post {
   padding: 20px 0;
   border-bottom: 1px solid #ccc;

@@ -1,1 +1,61 @@
 //Header specific stylings
+.nav-wrap {
+  li {
+    float: left;
+    list-style: none;
+  }
+  a {
+    color: #fff;
+  }
+
+}
+.nav-main {
+  padding-top: $navPaddingTop;
+  font-size: 16px;
+  &-item {
+    padding: 7px 21px 10px;
+    margin-right: 20px;
+  }
+
+  .active {
+    background: $navActiveColor;
+    border-radius: 15px;
+  }
+}
+.nav-sub{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  line-height: 40px;
+  font-size: 14px;
+
+  li { 
+    margin-right: 38px;
+  }
+
+  &:before {
+    content: '';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+  
+  &-bg {
+    background: $navSubGgColor;
+    border-top: 1px solid #3c3c3d;
+    height: 40px;
+  }
+}
+
+.search-wrap {
+  margin-top: $navPaddingTop;
+  //background: #303134 url('../img/search.png') no-repeat right center;
+
+  input {
+    height: 25px;
+    border: 0;
+    background: transparent;
+  }
+}

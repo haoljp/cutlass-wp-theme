@@ -1,13 +1,2 @@
 //Navigation specific stylings
-.nav-sublist{
-  &:before {
-    content: '';
-    display: table;
-  }
-  &:after {
-    clear: both;
-  }
-  li {
-    float: left;
-  }
-}
+

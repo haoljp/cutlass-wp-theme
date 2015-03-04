@@ -1,9 +1,12 @@
-.float-left {
+.pull-left {
 	float:left;
 }
-.float-right {
+.pull-right {
 	float:right;
 }
 .position-relative {
 	position:relative;
+}
+.clearfix {
+  @include clearfix()
 }
