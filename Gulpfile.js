@@ -1,3 +1,5 @@
+'use strict';
+
 // == Gulp Require Modules == //
 var gulp =            require('gulp'),
     sass =            require('gulp-ruby-sass'),
@@ -13,6 +15,7 @@ var gulp =            require('gulp'),
     mainBowerFiles =  require('main-bower-files'),
     filter =          require('gulp-filter'),
     connect =         require('gulp-connect'),
+    copy =            require('gulp-copy'),
     clean =           require('gulp-clean');
 
 // == Clean Tasks == //
@@ -32,6 +35,10 @@ gulp.task('clean-styles', function(){
 gulp.task('clean-images', function(){
     return gulp.src('dist/img/*', {read: false})
       .pipe(clean());
+});
+gulp.task('clean-fonts', function() {
+  return gulp.src('dist/fonts/*', {read: false})
+    .pipe(clean());
 });
 
 // == STYLES TASKS == //
@@ -134,6 +141,7 @@ gulp.task('watch', function() {
   gulp.watch('src/js/**/*.js', ['scripts-dev']);
   gulp.watch('src/img/**', ['imagemin']);
   gulp.watch('html/*.html', ['html']);
+  gulp.watch('src/fonts/**', ['fonts-copy']);
 
   livereload.listen();
   gulp.watch('**/*.php').on('change', livereload.changed);
@@ -141,6 +149,7 @@ gulp.task('watch', function() {
   gulp.watch('dist/css/*.css').on('change', livereload.changed);
   gulp.watch('dist/js/*.js').on('change', livereload.changed);
   gulp.watch('dist/img/**').on('change', livereload.changed);
+  gulp.watch('dist/fonts/**').on('change', livereload.changed);
 });
 
 gulp.task('connect', function() {
@@ -155,15 +164,22 @@ gulp.task('html', function() {
     .pipe(connect.reload());
 });
 
+gulp.task('fonts-copy', function() {
+  return gulp.src('src/fonts/**')
+    .pipe(copy('dist/fonts', {
+      prefix: 2
+    }));
+});
+
 
 // == GULP TASKS == //
 
 // = Clean Task = //
-gulp.task('clean', ['clean-styles', 'clean-scripts', 'clean-tmp']);
+gulp.task('clean', ['clean-styles', 'clean-scripts', 'clean-tmp', 'clean-fonts']);
 // = Development Task = //
-gulp.task('dev', ['clean', 'vendor-dev', 'styles-dev', 'scripts-dev']);
+gulp.task('dev', ['clean', 'fonts-copy', 'vendor-dev', 'styles-dev', 'scripts-dev']);
 // = Build Task = //
-gulp.task('build', ['clean', 'vendor-build', 'styles-build', 'scripts-build']);
+gulp.task('build', ['clean', 'fonts-copy', 'vendor-build', 'styles-build', 'scripts-build']);
 // = Image Task = //
 gulp.task('image', ['imagemin']);
 gulp.task('image-clear', ['clean-images', 'imagemin']);
