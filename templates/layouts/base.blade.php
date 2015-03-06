@@ -10,11 +10,7 @@
   
   @include('templates.includes.header')
 
-  <div class="wrap" role="document">
-    <div class="content">
-      @yield('content')
-    </div><!-- /.content -->
-  </div><!-- /.wrap -->
+  @yield('content')
 
   @include('templates.includes.footer')
 

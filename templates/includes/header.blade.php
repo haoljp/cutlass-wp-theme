@@ -1,19 +1,22 @@
-<header class="banner navbar navbar-default navbar-static-top" role="banner">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="{{ esc_url(home_url('/')) }}">{{ bloginfo('name') }}</a>
-    </div>
+<header class="header">
+  <div class="header-c1 container clearfix">
+    <div class="logo"><img src="{{ get_bloginfo('template_url') }}/dist/img/logo.png" alt=""/></div>
+    <!-- nav-wrap -->
+    @if(has_nav_menu('primary_navigation'))
+      {{ wp_nav_menu(array('menu' => 'primary','theme_location' => 'primary_navigation', 'depth' => 2, 'menu_class' => 'nav-main clearfix', 'walker' => new wp_bootstrap_navlist_walker(), 'container_class' => 'nav-wrap',)) }}
+    @endif
+    <!-- nav-wrap end -->
 
-    <nav class="collapse navbar-collapse" role="navigation">
-        @if(has_nav_menu('primary_navigation'))
-          {{ wp_nav_menu(array('menu' => 'primary','theme_location' => 'primary_navigation', 'depth' => 2, 'menu_class' => 'nav navbar-nav', 'walker' => new wp_bootstrap_navlist_walker(), 'container_class' => 'collapse navbar-collapse',)) }}
-        @endif
-    </nav>
+    <div class="form-wrap pull-right">
+      <div class="form-search">
+        <input type="text" placeholder="新手入门">
+        <span class="icon icon-search"></span>
+      </div>
+      <div class="rss-wrap">
+        <a href="#"><span class="icon icon-rss"></span></a>
+      </div>
+    </div>
   </div>
+  <div class="nav-sub-bg"></div>
 </header>
+
