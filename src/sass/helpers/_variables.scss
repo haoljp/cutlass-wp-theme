@@ -7,10 +7,15 @@ $baseFontFamily: "Microsoft Yahei", "Helvetica Neue", Helvetica, Tahoma, sans-se
 $headerColor: #18191b;
 
 $navPaddingTop: 26px;
-$navActiveColor: #d61751;
-$navSubGgColor: #111214;
 $containerWidth: 1000px;
 
+$primaryColor: #d61751;
 $bodyColor: #333;
 $linkColor: $bodyColor;
+
+$navActiveColor: $primaryColor;
+$navSubGgColor: #111214;
+
+$h3Color: #a66231;
+
 

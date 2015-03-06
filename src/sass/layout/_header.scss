@@ -12,15 +12,29 @@
 .nav-main {
   padding-top: $navPaddingTop;
   font-size: 16px;
-  &-item {
+  > li {
     padding: 7px 21px 10px;
     margin-right: 20px;
+
+    .caret {
+      display: none;
+      width: 0;
+      height: 0;
+      border-bottom: 7px solid $navSubGgColor;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+    }
+    &.active {
+      background: $navActiveColor;
+      border-radius: 15px;
+
+      .caret {
+        //display: inline-block;
+      }
+    }
   }
 
-  .active {
-    background: $navActiveColor;
-    border-radius: 15px;
-  }
+  
 }
 .nav-sub{
   position: absolute;
@@ -49,13 +63,51 @@
   }
 }
 
-.search-wrap {
+.form-wrap {
+  position: relative;
+  padding-right:92px;
+
+  .rss-wrap {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    border-radius: 50%;
+    background-color: #27282a;
+    width: 31px;
+    height: 31px;
+    
+    a {
+      color: $primaryColor;
+    }
+    .icon-rss {
+      position: absolute;
+      top: 5px;
+      left: 9px;
+      font-size: 18px;
+    }
+  }
+}
+
+.form-search {
+  position: relative;
   margin-top: $navPaddingTop;
+  padding-right: 20px;
+  background: #303134;
   //background: #303134 url('../img/search.png') no-repeat right center;
 
   input {
     height: 25px;
     border: 0;
     background: transparent;
+    &:focus {
+      background-color: transparent;
+    }
+  }
+
+  .icon-search {
+    position: absolute;
+    right: 6px;
+    top: 9px;
+    color: #4a5053;
   }
 }

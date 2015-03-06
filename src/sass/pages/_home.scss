@@ -1,28 +1,52 @@
 //Home page specific stylings
 .slider {
-  padding: 40px 0;
-  background: url($imgPath + '/slide.jpg') no-repeat 0 0;
+  height: 410px;
+  background: url($imgPath + '/slider.jpg') no-repeat left center;
   &-wrap {
+    padding: 40px 0;
+  }
+
+  &-content {
     width: 672px;
     float: left;
   }
-  .download-wrap {
-    width: 328px;
-    float: left;
-  }
-}
-.post {
-  padding: 20px 0;
-  border-bottom: 1px solid #ccc;
 
 }
-.excerpt-item {
-  padding-bottom: 10px;
-  h2 {
+.download {
+  width: 328px;
+  height: 330px;
+  float: right;
+  &-wrap {
+    padding: 20px 0 0 20px;
+  }
+  &-link {
+    display: block;
+    width: 289px;
+    height: 81px;
+    line-height: 81px;
+    color: #fff;
+    font-size: 28px;
+    background: url($imgPath + '/download.png') no-repeat;
+
+    a {
+      color: #fff;
+      padding-left: 52px;
+    }
+  }
+  &-summary {
+    line-height: 30px;
     font-size: 16px;
   }
-  .excerpt-img {
-    width: 300px;
-    margin-right: 10px;
+}
+
+.box-post {
+  margin-top: 24px;
+  .en {
+    border-radius: 5px;
+    padding: 0 3px;
+    background: $h3Color;
+    color: #fff;
   }
 }
+
+

@@ -7,43 +7,114 @@
   <link rel="stylesheet" href="../dist/css/main.css"/>
 </head>
 <body>
-<div>
   <div class="header">
-    <div class="container">
-      <div class="logo"><h1><img src="/dist/img/logo.png" alt=""/></h1></div>
+    <div class="header-c1 container clearfix">
+      <div class="logo"><img src="/dist/img/logo.png" alt=""/></div>
+      <!-- nav-wrap -->
       <div class="nav-wrap">
-        <ul class="nav-main">
-          <li class="nav-main-item">
+        <ul class="nav-main clearfix">
+          <li class=" active">
             <a href="#">攻略</a>
+            <span class="caret"></span>
             <ul class="nav-sub">
               <li><a href="">推荐</a></li>
               <li><a href="">武将</a></li>
               <li><a href="">资源</a></li>
             </ul>
           </li>
-          <li><a href="#">数据库</a></li>
-          <li><a href="#">礼包</a></li>
-          <li><a href="#">论坛</a></li>
+          <li class=""><a href="#">数据库</a></li>
+          <li class=""><a href="#">礼包</a></li>
+          <li class=""><a href="#">论坛</a></li>
         </ul>
       </div>
+      <!-- nav-wrap end -->
 
-      <div class="g-search">
-        <div></div>
-
+      <div class="form-wrap pull-right">
+        <div class="form-search">
+          <input type="text" placeholder="新手入门">
+          <span class="icon icon-search"></span>
+        </div>
+        <div class="rss-wrap">
+          <a href="#"><span class="icon icon-rss"></span></a>
+        </div>
       </div>
     </div>
-
+    <div class="nav-sub-bg"></div>
   </div>
 
-  <div class="content">
-    <div class="slide-wrap"></div>
+  <div class="slider">
+    <div class="slider-wrap container clearfix">
+      <div class="slider-content"></div>
+      <div class="download">
+        <div class="download-wrap">
+          <div class="download-link"><a href="#">下载客户端</a></div>
+          <p class="download-summary">《放开那三国》是一款三国题材卡牌手游，在传统卡牌游戏基础上对玩点和系统进行优化改革，使玩家可以更轻松的享受Q版三国乐趣。并且结</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content clearfix">
+    <div class="main">
+      <div class="box box-post">
+        <div class="box-hd">
+          <h3>最新资讯</h3>
+          <sup class="en">news</sup>
+        </div>
+        <div class="box-bd">
+          <div class="excerpt">
+            <div class="excerpt-thumb">
+              <img src="/dist/img/default.jpg">
+            </div>
+            <div class="excerpt-info">
+              <h4><a href="#">全平台活动：来自星星的宝物</a></h4>
+              <div class="excerpt-meta">
+                <span class="excerpt-time">2014-12-3  21:08:00</span>
+                <span class="excerpt-author">作者：小楼</span>
+                <span class="excerpt-source">来源：口袋巴士</span>
+              </div>
+              <div class="excerpt-summary">曹仁是当仁不让的第一肉。自带无敌技能，在2号位置能有效的吸收BOSS的高量伤害，进阶到4后，会习得霸道的神技牵绊，搭配马超、于</div>
+            </div>
+          </div>
+
+          <div class="excerpt">
+            <div class="excerpt-thumb">
+              <img src="/dist/img/default.jpg">
+            </div>
+            <div class="excerpt-info">
+              <h4><a href="#">全平台活动：来自星星的宝物</a></h4>
+              <div class="excerpt-meta">
+                <span class="excerpt-time">2014-12-3  21:08:00</span>
+                <span class="excerpt-author">作者：小楼</span>
+                <span class="excerpt-source">来源：口袋巴士</span>
+              </div>
+              <div class="excerpt-summary">曹仁是当仁不让的第一肉。自带无敌技能，在2号位置能有效的吸收BOSS的高量伤害，进阶到4后，会习得霸道的神技牵绊，搭配马超、于</div>
+            </div>
+          </div>
+
+          <div class="excerpt excerpt-gallery">
+            <div class="excerpt-thumb">
+              <img src="/dist/img/default.jpg">
+            </div>
+            <div class="excerpt-thumb">
+              <img src="/dist/img/default.jpg">
+            </div>
+            <div class="excerpt-thumb">
+              <img src="/dist/img/default.jpg">
+            </div>
+            <div class="excerpt-thumb">
+              <img src="/dist/img/default.jpg">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="aside"></div>
   </div>
 
   <div class="footer">
 
   </div>
-</div>
-
-  
 </body>
 </html>

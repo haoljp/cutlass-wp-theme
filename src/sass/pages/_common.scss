@@ -1,0 +1,55 @@
+// 页面公共结构样式
+
+.box {
+  &-hd {
+    h3 {
+      display: inline-block;
+      line-height: 30px;
+      font-size: 18px;
+      color: $h3Color;
+    }
+  }
+  &-bd {
+
+  }
+}
+
+.excerpt {
+  @include clearfix();
+  padding:26px 0 24px 0;
+  border-bottom: 1px solid #dfdfdf;
+
+  &-thumb {
+    float: left;
+    width: 180px;
+    height: 135px;
+  }
+  &-info {
+    float: right;
+    width: 472px;
+
+    h4 {
+      font-size: 20px;
+    }
+  }
+  &-meta {
+    color: #999;
+    padding: 15px 0;
+  }
+  &-time,
+  &-author {
+    margin-right: 35px;
+  }
+  &-summary {
+    line-height: 24px;
+  }
+
+  &-gallery {
+    .excerpt-thumb,
+    .excerpt-thumb img {
+      width: 166px;
+      height: 127px;
+    }
+  }
+  
+}
