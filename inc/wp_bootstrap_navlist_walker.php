@@ -21,7 +21,7 @@ class wp_bootstrap_navlist_walker extends Walker_Nav_Menu {
    */
   public function start_lvl( &$output, $depth = 0, $args = array() ) {
     $indent = str_repeat( "\t", $depth );
-    $output .= "\n$indent<div id=\"nav-sublist\"><ul role=\"menu\" class=\"nav nav-sub\">\n";
+    $output .= "\n$indent<div id=\"nav-sublist\" class=\"nav-sub-wrap\"><span class=\"arrow\"></span>\n$indent<ul role=\"menu\" class=\"nav nav-sub\">\n";
   }
 
   /**

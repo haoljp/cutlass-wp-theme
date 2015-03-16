@@ -2,24 +2,20 @@ ul, ol {
 	margin: 0 0 ;
 }
 
-ul {
-	list-style: disc;
+.list-group {
+  &-item{
+    position: relative;
+    padding-left: 12px;
+    line-height: 30px;
+    background: url($imgPath + '/dot.png') no-repeat left center;
+
+    .datetime {
+      position: absolute;
+      right: 0;
+    }
+  }
 }
 
-ol {
-	list-style: decimal;
-}
+.dl-horizontal {
 
-li > ul,
-li > ol {
-	margin-bottom: 0;
-	margin-left: 1.5em;
-}
-
-dt {
-	font-weight: bold;
-}
-
-dd {
-	margin: 0 1.5em 1.5em;
 }

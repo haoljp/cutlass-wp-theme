@@ -1,0 +1,59 @@
+.article {
+  &-header {
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 1px solid $boxBorderColor;
+    h1 {
+      font-size: 30px;
+    }
+  }
+  &-body {
+    padding-bottom: 26px;
+    border-bottom: 1px solid $primaryColor;
+  }
+  &-foot {
+    margin-top: 20px;
+    @include clearfix();
+
+    .prev,
+    .next {
+      width: 499px;
+      height: 40px;
+      line-height: 40px;
+      background: #dfdfdf;
+    }
+    .prev {
+      float: left;
+      text-indent: 24px;
+    }
+    .next {
+      float: right;
+      padding-right: 24px;
+      width: 475px;
+      text-align: right;
+    }
+  }
+}
+
+
+.box-article-relative {
+  @include clearfix();
+  .list-group-item {
+    float: left;
+    width: 45%;
+    .datetime {
+      right: 10px;
+    }
+  }
+  .box-hd {
+    h3 {
+      padding:26px 0 0 0;
+    }
+  }
+  .box-bd {
+    border: 0;
+    h3 {
+      padding: 0;
+    }
+  }
+}

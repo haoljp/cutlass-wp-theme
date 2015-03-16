@@ -1,19 +1,5 @@
 // 页面公共结构样式
 
-.box {
-  &-hd {
-    h3 {
-      display: inline-block;
-      line-height: 30px;
-      font-size: 18px;
-      color: $h3Color;
-    }
-  }
-  &-bd {
-
-  }
-}
-
 .excerpt {
   @include clearfix();
   padding:26px 0 24px 0;

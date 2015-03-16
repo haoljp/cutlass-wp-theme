@@ -1,18 +1,16 @@
 <div class="content">
-  @include('templates.includes.page-header')
-
   @wpposts
     <article {{ post_class() }}>
-      <header>
+      <div class="article-header">
+        <h1>{{ cutlass_title() }}</h1>
         @include('templates.includes.entry-meta')
-      </header>
-      <div class="entry-content">
+      </div>
+      <div class="article-body">
         {{ the_content() }}
       </div>
-      <footer>
-        {{ wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'cutlass'), 'after' => '</p></nav>')) }}
-      </footer>
+      {{ wp_link_pages(array('before' => '<nav class="article-foot">' . __('Pages:', 'cutlass'), 'after' => '</div>')) }}
     </article>
+    
     <?php comments_template('', true); ?>
   @wpempty
     @include('templates.content.empty')

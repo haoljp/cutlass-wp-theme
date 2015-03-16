@@ -21,7 +21,7 @@
 
 .content {
   @include wrapper();
-
+  padding-top: 10px;
   .main {
     width: 672px;
     float: left;
@@ -29,6 +29,35 @@
   .aside {
     width:300px;
     float:right;
+  }
+}
+
+.browsehappy {
+  margin-top: 10%;
+  text-align: center;
+  font-size: 1.2em;
+  color: $primaryColor;
+}
+
+.backtop {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  width: 60px;
+  height: 60px;
+  display: none;
+  line-height: 60px;
+  border-radius: 50%;
+  background-color: #b0b0b0;
+  text-align: center;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.lt-ie8 {
+  .wrapper {
+    display: none;
   }
 }
 

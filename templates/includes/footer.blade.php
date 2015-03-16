@@ -3,3 +3,4 @@
     {{ dynamic_sidebar('sidebar-footer') }}
   </div>
 </footer>
+<div id="backtop" class="backtop"></div>

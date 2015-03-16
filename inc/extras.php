@@ -25,9 +25,7 @@ function cutlass_post_thumb() {
   global $post;
   
   if ( has_post_thumbnail() ) {   
-      $domsxe = simplexml_load_string(get_the_post_thumbnail());
-      $thumbnailsrc = $domsxe->attributes()->src;  
-      return '<img src="'.$thumbnailsrc.'" alt="'.trim(strip_tags( $post->post_title )).'" />';
+      echo the_post_thumbnail('cutlass-thumb');
     } else {
       $content = $post->post_content;  
       preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $content, $matches, PREG_PATTERN_ORDER);  

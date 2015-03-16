@@ -13,7 +13,8 @@
  * To use the default WordPress version of jQuery, go to lib/config.php and
  * remove or comment out: add_theme_support('jquery-cdn');
  * ======================================================================== */
-
+'use strict';
+/* global jQuery:true */
 (function($) {
 
 // Use this variable to set up the common and page specific functions. If you 
@@ -23,6 +24,23 @@ var cutlass = {
   common: {
     init: function() {
       // JavaScript to be fired on all pages
+      
+      this.initNav();
+      $('#backtop').backtotop({
+        backToTopTxt: '<span class="icon icon-arrow-up"></span>'
+      });
+    },
+
+    initNav: function() {
+      var $activeNav = $('#menu-primary .active');
+      var offset = $activeNav.offset();
+      var $subNav = $('#nav-sublist');
+
+      if ($activeNav.length) {
+        // TODO 判断子菜单的宽度
+        $subNav.css('left', offset.left + $activeNav.outerWidth() / 2 - $subNav.outerWidth() / 2);
+      }
+      
     }
   },
   // Home page

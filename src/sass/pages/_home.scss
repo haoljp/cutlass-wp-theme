@@ -1,6 +1,7 @@
 //Home page specific stylings
 .slider {
   height: 410px;
+  margin-bottom: 14px;
   background: url($imgPath + '/slider.jpg') no-repeat left center;
   &-wrap {
     padding: 40px 0;
@@ -40,12 +41,50 @@
 }
 
 .box-post {
-  margin-top: 24px;
   .en {
     border-radius: 5px;
     padding: 0 3px;
     background: $h3Color;
     color: #fff;
+  }
+  .box-hd {
+    h3 {
+      display: inline-block;
+      padding-bottom: 0;
+    }
+  }
+  .box-bd {
+    border: 0;
+    padding: 0;
+  }
+}
+
+.box-strategy {
+}
+
+.box-material {
+  margin-top: 28px;
+
+}
+
+.dl-material {
+  dt {
+    margin-bottom: 12px;
+    color: $primaryColor;
+    font-size: 16px;
+  }
+  dd {
+    @include clearfix();
+    a {
+      float: left;
+      padding: 7px 14px;
+      margin:0 14px 12px 0;
+      border-style: solid;
+      border-width: 1px;
+      border-color: #c6c6c6;
+      border-radius: 14px;
+      font-size: 12px;
+    }
   }
 }
 

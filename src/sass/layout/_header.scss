@@ -16,20 +16,36 @@
     padding: 7px 21px 10px;
     margin-right: 20px;
 
-    .caret {
+    .arrow,
+    .arrow:after {
+      position: absolute;
       display: none;
       width: 0;
       height: 0;
-      border-bottom: 7px solid $navSubGgColor;
-      border-left: 7px solid transparent;
-      border-right: 7px solid transparent;
+      border-color: transparent;
+      border-style: solid;
     }
     &.active {
       background: $navActiveColor;
       border-radius: 15px;
 
-      .caret {
-        //display: inline-block;
+      .arrow {
+        display: block;
+        top: -22px;
+        left: 50%;
+        margin-left: -11px;
+        border-top-width: 0;
+        border-bottom-color: $navSubBorderColor;
+        border-width: 11px;
+        &:after {
+          display: block;
+          top: 1px;
+          margin-left: -10px;
+          content: "";
+          border-width: 10px;
+          border-top-width: 0;
+          border-bottom-color: $navSubGgColor;
+        }
       }
     }
   }
@@ -37,13 +53,15 @@
   
 }
 .nav-sub{
-  position: absolute;
-  left: 0;
-  bottom: 0;
 
-  line-height: 40px;
-  font-size: 14px;
-
+  &-wrap {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    line-height: 40px;
+    font-size: 14px;
+  }
+  
   li { 
     margin-right: 38px;
   }
@@ -58,7 +76,7 @@
   
   &-bg {
     background: $navSubGgColor;
-    border-top: 1px solid #3c3c3d;
+    border-top: 1px solid $navSubBorderColor;
     height: 40px;
   }
 }

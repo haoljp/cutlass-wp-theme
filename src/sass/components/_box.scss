@@ -1,0 +1,45 @@
+.box {
+  &-hd {
+    position: relative;
+    h3 {
+      padding-bottom: 16px;
+      line-height: 30px;
+      font-size: 18px;
+      color: $h3Color;
+    }
+    .spec {
+      color: $bodyColor;
+    }
+  }
+  &-action {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    .icon {
+      position: relative;
+      top: 2px;
+    }
+  }
+  &-bd {
+    border: 1px solid $boxBorderColor;
+    padding: 10px;
+  }
+
+  &-latest {
+    .box-hd {
+      border-bottom: 1px solid $boxBorderColor;
+      h3 {
+        padding-bottom: 14px;
+      }
+      strong {
+        position: relative;
+        padding-bottom: 16px;
+        bottom: -2px;
+        border-bottom: 2px solid $primaryColor;
+      }
+    }
+    .box-action {
+      top: 7px;
+    }
+  }
+}

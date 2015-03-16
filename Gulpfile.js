@@ -83,12 +83,14 @@ gulp.task('scripts-build', function() {
 
 
 // == VENDOR TASKS == // 
+// 
+var filterVendor = filter(['*.js', '!html5shiv/**']);
 
 // = Copies and concatinates the development vendor CSS and JS specified in Bower (Read the Docs) = //
 gulp.task('vendor-dev', function(){
   gulp.src(mainBowerFiles())
     .pipe(plumber())
-    .pipe(filter('*.js'))
+    .pipe(filterVendor)
     .pipe(gulp.dest('dist/tmp/'))
     .pipe(concat('vendor.js'))
     .pipe(gulp.dest('dist/js/'));
@@ -103,7 +105,7 @@ gulp.task('vendor-dev', function(){
 gulp.task('vendor-build', function() {
   gulp.src(mainBowerFiles())
     .pipe(plumber())
-    .pipe(filter('*.js'))
+    .pipe(filterVendor)
     .pipe(gulp.dest('dist/tmp/'))
     .pipe(uglify())
     .pipe(concat('vendor.js'))
