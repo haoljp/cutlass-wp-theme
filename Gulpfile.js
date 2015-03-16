@@ -2,7 +2,7 @@
 
 // == Gulp Require Modules == //
 var gulp =            require('gulp'),
-    sass =            require('gulp-ruby-sass'),
+    sass =            require('gulp-sass'),
     autoprefixer =    require('gulp-autoprefixer'),
     cssmin =          require('gulp-cssmin'),
     rename =          require('gulp-rename'),
