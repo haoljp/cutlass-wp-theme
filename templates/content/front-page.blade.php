@@ -21,10 +21,7 @@
         @wpquery(array('post_type' => 'post'))
           @include('templates.content.excerpt')
         @wpempty
-          <div class="alert alert-warning">
-            {{ _e('Sorry, no results were found.', 'cutlass') }} 
-          </div>
-          {{ get_search_form(false) }}
+          
         @wpend
         
       </div>

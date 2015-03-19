@@ -6,9 +6,18 @@
   border-bottom: 1px solid #dfdfdf;
 
   &-thumb {
+    position: relative;
     float: left;
     width: 180px;
     height: 135px;
+    .icon {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -15px;
+      margin-top: -15px;
+      font-size: 30px;
+    }
   }
   &-info {
     float: right;

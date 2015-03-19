@@ -3,8 +3,11 @@
     {{ the_content() }}
   </article>
 @else 
-  <article class="excerpt">
+  <article class="excerpt@if(get_post_format() == 'video') excerpt-video@endif">
     <div class="excerpt-thumb">
+      @if(get_post_format() == 'video')
+        <span class="icon icon-play-circle"></span>
+      @endif  
       {{ cutlass_post_thumb() }}
     </div>
     <div class="excerpt-info">
