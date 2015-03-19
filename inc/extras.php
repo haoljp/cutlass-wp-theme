@@ -25,15 +25,38 @@ function cutlass_post_thumb() {
   global $post;
   
   if ( has_post_thumbnail() ) {   
-      echo the_post_thumbnail('cutlass-thumb');
-    } else {
-      $content = $post->post_content;  
-      preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $content, $matches, PREG_PATTERN_ORDER);  
-      $n = count($matches[1]);  
-      if($n > 0){
-        return '<img src="'.$matches[1][0].'" alt="'.trim(strip_tags( $post->post_title )).'" />';  
-      }else {
-        return '<img src="'.get_bloginfo('template_url').'/dist/img/default-thumb.jpg" alt="'.trim(strip_tags( $post->post_title )).'" />';  
-      }  
-    }
+    echo the_post_thumbnail('cutlass-thumb');
+  } else {
+    $content = $post->post_content;  
+    preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $content, $matches, PREG_PATTERN_ORDER);  
+    $n = count($matches[1]);  
+    if($n > 0){
+      return '<img src="'.$matches[1][0].'" alt="'.trim(strip_tags( $post->post_title )).'" />';  
+    }else {
+      return '<img src="'.get_bloginfo('template_url').'/dist/img/default-thumb.jpg" alt="'.trim(strip_tags( $post->post_title )).'" />';  
+    }  
+  }
 }
+
+function cutlass_gallery_thumb() {
+  global $post;
+  
+  $content = $post->post_content;  
+  preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $content, $matches, PREG_PATTERN_ORDER);  
+  $n = count($matches[1]);  
+  if($n > 0){
+    $result = '';
+    for ($i = 0; $i < 4; $i++) {
+      $src = $matches[1][$i];
+      if (count($src) > 0) {
+        $result = $result . '<img src="'.$matches[1][$i].'" alt="'.trim(strip_tags( $post->post_title )).'" />';    
+      } else {
+        break;
+      }
+      
+    } 
+
+    return $result;  
+  }
+}
+

@@ -1,6 +1,6 @@
 @if(get_post_format() == 'gallery')
   <article class="excerpt excerpt-gallery">
-    {{ the_content() }}
+    {{ cutlass_gallery_thumb() }}
   </article>
 @else 
   <article class="excerpt@if(get_post_format() == 'video') excerpt-video@endif">
